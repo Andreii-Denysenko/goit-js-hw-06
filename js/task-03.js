@@ -12,3 +12,13 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
+
+const addSample = ({url, alt}) =>
+  `<li><img src = "${url}", alt = "${alt}" width ="300" ></li>`
+
+const addImeges = images.reduce((acc, item) => acc + addSample(item),"" );
+
+const gellery = document.querySelector(".gallery");
+gellery.insertAdjacentHTML( 'afterbegin', addImeges);
+gellery.classList.add('gallery-flex');
+console.log(gellery)
